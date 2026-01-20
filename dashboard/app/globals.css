@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(0, 0, 0, 0.3);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #f3f4f6;
+    /* Light gray text for dark mode */
+    /* Solid Background */
+    background-color: #1a1a1a;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    border-radius: 1.5rem;
+    /* Rounded shapes as requested */
+}
+
+.glass-card {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* .glass-card:hover {
+    background: rgba(40, 40, 40, 0.8);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+} */
+
+/* App Layout - Equal Margins */
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* App Layout - Equal Margins */
+.app-container {
+    height: 100vh;
+    width: 100vw;
+    padding: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.app-content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Glass effect for the main wrapper too, effectively a "floating" app */
+    overflow: hidden;
+    height: 100%;
+    /* Full height to fill the container */
+}
+
+@media (min-width: 768px) {
+    .app-content-wrapper {
+        flex-direction: row;
+    }
+}
+
+/* Sidebar Styles */
+/* Sidebar Styles */
+/* Sidebar Styles */
+.glass-sidebar {
+    /* Now transparent to blend with layout */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Typography Overrides for Glass */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #f9fafb;
+    /* Almost white for contrast */
+}
